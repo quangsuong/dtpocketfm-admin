@@ -103,7 +103,7 @@ class HomeController extends Controller
             for ($i = 0; $i < count($data); $i++) {
                 $return['result'][$i]['page_name'] = $data[$i]['page_name'];
                 $return['result'][$i]['title'] = $data[$i]['title'];
-                $return['result'][$i]['url'] = env('APP_URL') . '/public/' . $data[$i]['page_name'];
+                $return['result'][$i]['url'] = env('APP_URL') . '/' . $data[$i]['page_name'];
                 $return['result'][$i]['icon'] = $this->common->getImage($this->folder_app, $data[$i]['icon']);
             }
             return $return;
@@ -1446,7 +1446,7 @@ class HomeController extends Controller
             return response()->json(array('status' => 400, 'errors' => $e->getMessage()));
         }
     }
-    public function get_earn_coin_transaction(Request $request) // 1- Spin_Wheel, 2- Daily_Login_Point, 3- Get_Free_Coin	
+    public function get_earn_coin_transaction(Request $request) // 1- Spin_Wheel, 2- Daily_Login_Point, 3- Get_Free_Coin
     {
         try {
             $validation = Validator::make(
