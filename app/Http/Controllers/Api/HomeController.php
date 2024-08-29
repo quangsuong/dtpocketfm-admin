@@ -103,7 +103,7 @@ class HomeController extends Controller
             for ($i = 0; $i < count($data); $i++) {
                 $return['result'][$i]['page_name'] = $data[$i]['page_name'];
                 $return['result'][$i]['title'] = $data[$i]['title'];
-                $return['result'][$i]['url'] = env('APP_URL') . '/' . $data[$i]['page_name'];
+                $return['result'][$i]['url'] = env('APP_URL') . '/public/' . $data[$i]['page_name'];
                 $return['result'][$i]['icon'] = $this->common->getImage($this->folder_app, $data[$i]['icon']);
             }
             return $return;
